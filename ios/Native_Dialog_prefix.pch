@@ -1,0 +1,21 @@
+#ifndef Native_Dialog_prefix_pch
+#define Native_Dialog_prefix_pch
+
+//#import "FWCategoryHeader.h"
+//#import "MJExtension.h"
+#import "ARCCompile.h"
+#import "FanweDeviceMacro.h"
+#import "FWColorMacro.h"
+
+#define kWidth           self.view.frame.size.width
+#define kHeight          self.view.frame.size.height
+#define SCREEN_WIDTH     [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
+
+#define kWeakSelf        __weak typeof(self) weakSelf = self
+
+#import "UIView+Extension.h"
+#import "UIImage+Custom.h"
+
+
+#endif
