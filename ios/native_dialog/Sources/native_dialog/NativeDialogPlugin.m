@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import "NativeDialogPlugin.h"
 @import MBProgressHUD;
 #import "FanweDeviceMacro.h"

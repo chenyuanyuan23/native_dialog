@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 //
 //  UILabel+UILabel_ChangeLineSpaceAndWordSpace_m.m
 //  native_dialog
