@@ -1,9 +1,8 @@
 #import "NativeDialogPlugin.h"
-#import "MBProgressHUD/MBProgressHUD.h"
+@import MBProgressHUD;
 #import "FanweDeviceMacro.h"
 #import "FWColorMacro.h"
 
-#import "XHPhotoViewController.h"
 #import "UILabel+UILabel_ChangeLineSpaceAndWordSpace_m.h"
 
 //#import <Foundation/NSBundle.h>
@@ -186,12 +185,6 @@ typedef void(^floatButtonClickDelegate)(void);
     result(nil);
 }
 
-- (void)createCarameDialog:(FlutterMethodCall*)call result:(FlutterResult)result {
-    id callbackIndex = call.arguments[@"callback"];
-    [XHPhotoViewController showWindow];
-    result(nil);
-}
-
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
@@ -201,10 +194,8 @@ typedef void(^floatButtonClickDelegate)(void);
     [self handleShowConfirm:call result:result];
   } else if ([@"toastDialog" isEqualToString:call.method]) {
     [self handleShowToast:call result:result];
-  } else if ([@"createCarameDialog" isEqualToString:call.method]) {
-    [self createCarameDialog:call result:result];
-  }else if ([@"loadingDialog" isEqualToString:call.method]) {
-      [self loadAnim1:call];
+  } else if ([@"loadingDialog" isEqualToString:call.method]) {
+    [self loadAnim1:call];
   } else {
     result(FlutterMethodNotImplemented);
   }

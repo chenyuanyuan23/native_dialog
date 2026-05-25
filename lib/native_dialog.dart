@@ -75,18 +75,6 @@ class NativeDialog {
     }
   }
 
-  // 数字键盘验证码情况
-  Future<String> carame() {
-    Completer<String> comp = Completer();
-    int index = ++_callbackIndex;
-    _callbacks[index] = (args) {
-      _callbacks.remove(index);
-      comp.complete(args);
-    };
-    _channel.invokeMethod('createCarameDialog');
-    return comp.future;
-  }
-
   Future<void> _onMethodCall(MethodCall call) async {
     switch (call.method) {
       case 'doCallback':
